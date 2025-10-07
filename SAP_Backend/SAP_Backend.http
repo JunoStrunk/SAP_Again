@@ -1,0 +1,24 @@
+@SAP_Backend_HostAddress = https://localhost:7155
+
+GET {{SAP_Backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+POST {{SAP_Backend_HostAddress}}/api/pets
+Content-Type: application/json
+
+{
+  "name" : "Turtle"
+}
+
+###
+
+GET {{SAP_Backend_HostAddress}}/api/pets
+
+###
+
+@id=1
+GET {{SAP_Backend_HostAddress}}/api/pets/{{id}}
+
+###
