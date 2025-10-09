@@ -1,6 +1,7 @@
 ﻿namespace SAP_Backend.Models
 {
     using Microsoft.EntityFrameworkCore;
+    using System.ComponentModel.DataAnnotations;
 
     public class PetContext : DbContext
     {
@@ -11,13 +12,14 @@
             DbPath = "SQLiteDB.db";
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options) => 
+        protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlite($"Data Source={DbPath}");
 
         public DbSet<Pet> Pets { get; set; } = null!;
     }
 
     public class Pet
     {
+        [Key]
         public required string Name { get; set; }
         public required int Turn { get; set; }
     }

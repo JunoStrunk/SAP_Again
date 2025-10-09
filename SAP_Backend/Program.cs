@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<PetContext>(opt => opt.UseInMemoryDatabase("PetList"));
+builder.Services.AddDbContext<TeamContext>(opt => opt.UseInMemoryDatabase("TeamList"));
 
 var app = builder.Build();
 
